@@ -1,0 +1,25 @@
+[project]
+name = "instrument-agent"
+version = "0.1.0"
+description = "实验室科研仪器智能运维 · 多智能体协作系统"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0",
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "acps-sdk>=2.0.0",
+    "acps-cli",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+acps-sdk = { git = "https://gitcode.com/AIP-PUB/ACPs-community.git", subdirectory = "acps-sdk" }
+acps-cli = { git = "https://gitcode.com/AIP-PUB/ACPs-community.git", subdirectory = "acps-cli" }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

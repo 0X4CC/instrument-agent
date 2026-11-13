@@ -1,0 +1,143 @@
+[
+  {
+    "code": "E-201",
+    "device_type": "离心机",
+    "name": "转子不平衡",
+    "severity": "中",
+    "checks": {
+      "vibration_mm_s": 5.0
+    },
+    "cause": "转子配重不均，或离心管放置不对称",
+    "action": "停机，检查转子配重块与离心管对称性；重新配平后低速试运行",
+    "manual": "§3.2 转子平衡与维护"
+  },
+  {
+    "code": "E-202",
+    "device_type": "离心机",
+    "name": "腔体温度失控",
+    "severity": "高",
+    "checks": {
+      "rotor_temp_c": 10.0
+    },
+    "cause": "制冷压缩机异常，或温度传感器漂移",
+    "action": "立即停止离心，检查制冷系统；若样品对温度敏感，转移至备用设备",
+    "manual": "§4.1 温控系统故障排查"
+  },
+  {
+    "code": "E-203",
+    "device_type": "离心机",
+    "name": "转速不达标",
+    "severity": "中",
+    "checks": {
+      "speed_rpm": 10000
+    },
+    "cause": "驱动皮带打滑，或电机碳刷磨损",
+    "action": "检查驱动皮带张紧度；碳刷磨损超过限值须更换",
+    "manual": "§5.3 驱动系统维护"
+  },
+  {
+    "code": "E-301",
+    "device_type": "分光光度计",
+    "name": "光源能量不足",
+    "severity": "高",
+    "checks": {
+      "lamp_hours": 2000
+    },
+    "cause": "氘灯/钨灯寿命耗尽，或光路积灰",
+    "action": "更换对应光源灯；更换前先清洁光路窗口",
+    "manual": "§2.4 光源更换流程"
+  },
+  {
+    "code": "E-302",
+    "device_type": "分光光度计",
+    "name": "基线漂移超限",
+    "severity": "中",
+    "checks": {
+      "baseline_drift_abs": 0.005
+    },
+    "cause": "比色皿污染，或样品室温度不稳定",
+    "action": "清洗比色皿；预热仪器 30 分钟后重新做基线校正",
+    "manual": "§3.1 基线校正"
+  },
+  {
+    "code": "E-303",
+    "device_type": "分光光度计",
+    "name": "波长准确度超差",
+    "severity": "中",
+    "checks": {
+      "wavelength_error_nm": 1.0
+    },
+    "cause": "单色器传动机构松动，或波长校准过期",
+    "action": "执行波长校准程序；若仍超差，检查单色器传动机构",
+    "manual": "§3.5 波长校准"
+  },
+  {
+    "code": "E-401",
+    "device_type": "培养箱",
+    "name": "温度超调",
+    "severity": "高",
+    "checks": {
+      "temp_deviation_c": 1.0
+    },
+    "cause": "温控 PID 参数失配，或加热元件局部短路",
+    "action": "重新自整定 PID；若反复超调，检查加热元件绝缘",
+    "manual": "§4.2 温控整定"
+  },
+  {
+    "code": "E-402",
+    "device_type": "培养箱",
+    "name": "湿度传感器失效",
+    "severity": "低",
+    "checks": {
+      "humidity_rh": 95.0
+    },
+    "cause": "湿度传感器老化，或水箱缺水",
+    "action": "先补满水箱；若读数仍不变，更换湿度传感器",
+    "manual": "§5.1 湿度系统维护"
+  },
+  {
+    "code": "E-403",
+    "device_type": "培养箱",
+    "name": "箱门未关严",
+    "severity": "低",
+    "checks": {
+      "door_open_seconds": 60
+    },
+    "cause": "门封条老化，或箱门未完全闭合",
+    "action": "检查门封条是否变形；更换老化封条",
+    "manual": "§2.2 门封维护"
+  },
+  {
+    "code": "E-12",
+    "device_type": "PCR仪",
+    "name": "温度传感器异常",
+    "severity": "高",
+    "cause": "温度传感器接线松动或损坏",
+    "action": "检查传感器连接线；用万用表测阻值，异常则更换传感器",
+    "manual": "§4.2 温度传感器检查"
+  },
+  {
+    "code": "E-15",
+    "device_type": "PCR仪",
+    "name": "热盖未关闭",
+    "severity": "低",
+    "cause": "热盖未压紧或门锁开关失效",
+    "action": "重新压紧热盖；若仍报错，检查门锁微动开关",
+    "manual": "§2.3 热盖操作"
+  },
+  {
+    "code": "E-205",
+    "device_type": "离心机",
+    "name": "轴承磨损",
+    "severity": "高",
+    "checks": {
+      "vibration_mm_s": 5.0,
+      "rotor_temp_c": {
+        "gt": 15.0
+      }
+    },
+    "cause": "主轴承磨损导致振动与发热同时升高",
+    "action": "停机检查主轴轴承游隙；超过厂商限值须更换轴承组",
+    "manual": "§5.2 主轴轴承检查"
+  }
+]

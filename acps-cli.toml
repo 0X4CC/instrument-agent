@@ -1,0 +1,32 @@
+# acps-cli 配置 · 梧桐科研智能体协作平台
+#
+# 用法：
+#   acps-cli --config acps-cli.toml auth login ...
+#
+# 说明：
+#   - 这里的地址是【平台服务端】，不是你的 Partner 地址
+#   - auth.token 文件里存的是登录凭据，已被 .gitignore 挡住，不会提交
+
+[registry]
+base_url = "https://wt.ioa.pub/registry-server"
+timeout_seconds = 30
+
+[auth]
+user_token_file = "./.acps-cli/tokens/registry-user.json"
+admin_token_file = "./.acps-cli/tokens/registry-admin.json"
+
+[ca]
+base_url = "https://wt.ioa.pub/ca-server"
+# 证书材料落在哪（审核通过、领证之后才会有内容）
+# account_keys_dir = "./keyfiles/accounts"
+# private_keys_dir = "./keyfiles/private"
+# certs_dir       = "./keyfiles/certs"
+# csr_dir         = "./keyfiles/csr"
+# trust_bundle_path = "./keyfiles/trust-bundle.pem"
+
+[discovery]
+base_url = "https://wt.ioa.pub/discovery"
+
+[mq]
+group_api_url = "https://wt.ioa.pub/mq-auth/group"
+auth_api_url = "https://wt.ioa.pub/mq-auth/auth"

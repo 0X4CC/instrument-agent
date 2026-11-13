@@ -1,0 +1,100 @@
+{
+  "aic": "1.2.156.3088.1.BUPT.AD8RWG.M34RS7.TBZ0N8.1DGH",
+  "active": true,
+  "lastModifiedTime": "2026-10-30T09:47:04.082757+08:00",
+  "protocolVersion": "02.02",
+  "name": "科研仪器故障诊断智能体",
+  "description": "面向高校实验室科研仪器的故障诊断 Partner。职责：接收仪器状态（错误码 + 传感器读数），依据故障规则库做根因定位，输出「确诊 / 疑似 / 未知故障」三级结论，并给出严重度、可能原因、处置建议与手册索引。范围：覆盖离心机、分光光度计、恒温恒湿培养箱等实验室常见设备。明确拒绝：① 仪器采购与选型咨询；② 实验室安全操作培训；③ 与故障诊断无关的通用技术问答；④ 不在规则库覆盖范围内的设备型号（会返回「未知故障」并提示人工排查，不臆测结论）。混合请求中仅处理诊断相关部分并声明拒绝其余。\n\n【输入数据要求】\n必填：仪器编号（如 CEN-01）或「巡诊」以检查全部仪器。\n可选：设备类型、错误码、传感器读数（温度 / 振动 / 转速 / 光源小时数 / 湿度等），用于佐证错误码是否成立。\n行为约定：当错误码匹配到规则但传感器数据不支撑时，返回「疑似」而非「确诊」，并列出哪一项数据未佐证；当错误码不在规则库时，返回「未知故障」并明确提示需人工排查，不得编造原因。",
+  "version": "0.1.3",
+  "provider": {
+    "organization": "科研仪器智能运维项目组",
+    "department": "",
+    "url": "",
+    "license": ""
+  },
+  "securitySchemes": {
+    "mtls": {
+      "type": "mutualTLS",
+      "description": "智能体间 mTLS 双向认证"
+    }
+  },
+  "endPoints": [
+    {
+      "url": "https://YOUR_SERVER_IP:8011/rpc",
+      "transport": "JSONRPC",
+      "security": [
+        {
+          "mtls": []
+        }
+      ]
+    }
+  ],
+  "certificate": {
+    "altNames": {
+      "dns": [
+        "YOUR_SERVER_IP"
+      ]
+    }
+  },
+  "capabilities": {
+    "streaming": false,
+    "notification": false,
+    "messageQueue": []
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "instrument.fault-diagnosis",
+      "name": "仪器故障诊断",
+      "description": "根据仪器上报的错误码与传感器读数定位故障根因。\n【输入要求】\n必填：仪器编号（如 CEN-01）。\n可选：错误码、传感器读数（振动 mm/s、温度 °C、转速 rpm、光源小时数、湿度 %RH 等）。\n【输出内容】\n结论（确诊 / 疑似 / 未知故障）、故障名称、严重度（低 / 中 / 高 / 紧急）、判断依据、可能原因、处置建议、手册参考章节。\n当错误码匹配但传感器数据不支撑时返回「疑似」；当错误码不在规则库时返回「未知故障」并提示人工排查。",
+      "version": "0.1.0",
+      "tags": [
+        "故障诊断",
+        "根因分析",
+        "规则推理",
+        "仪器运维"
+      ],
+      "examples": [
+        "诊断 CEN-01",
+        "高速冷冻离心机 A-01 报了 E-201，振动 8.2 mm/s，是什么问题",
+        "UV-01 报 E-301，光源用了 2450 小时，需要换灯吗"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "text/plain",
+        "application/json"
+      ]
+    },
+    {
+      "id": "instrument.fleet-patrol",
+      "name": "全员巡诊",
+      "description": "对纳管的全部仪器做一次批量诊断，按结论分组汇总，只返回异常项。\n【输入要求】\n必填：无。发送「巡诊」「全部」或空内容即可触发。\n【输出内容】\n逐台诊断结论 + 汇总统计（正常 / 确诊 / 疑似 / 未知故障各多少台）。\n适用于每日晨检、交接班检查、故障集中排查等场景。",
+      "version": "0.1.0",
+      "tags": [
+        "批量诊断",
+        "巡诊",
+        "状态汇总"
+      ],
+      "examples": [
+        "巡诊",
+        "检查一下所有仪器",
+        "今天有哪些设备有异常"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "text/plain",
+        "application/json"
+      ]
+    }
+  ]
+}

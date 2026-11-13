@@ -1,0 +1,304 @@
+[
+  {
+    "code": "E-201",
+    "fault_name": "转子不平衡",
+    "device_type": "离心机",
+    "manual": "§3.2 转子平衡与维护",
+    "expected_hours": 2,
+    "spares": [
+      {
+        "name": "转子配重块",
+        "stock": 6,
+        "lead_days": 2
+      },
+      {
+        "name": "离心管适配器",
+        "stock": 12,
+        "lead_days": 1
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0504",
+        "resolution": "重新配平后恢复正常",
+        "days_ago": 21
+      }
+    ]
+  },
+  {
+    "code": "E-202",
+    "fault_name": "腔体温度失控",
+    "device_type": "离心机",
+    "manual": "§4.1 温控系统故障排查",
+    "expected_hours": 4,
+    "spares": [
+      {
+        "name": "温度传感器 PT100",
+        "stock": 3,
+        "lead_days": 5
+      },
+      {
+        "name": "压缩机启动电容",
+        "stock": 2,
+        "lead_days": 7
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0474",
+        "resolution": "更换备件后复测通过",
+        "days_ago": 17
+      }
+    ]
+  },
+  {
+    "code": "E-203",
+    "fault_name": "转速不达标",
+    "device_type": "离心机",
+    "manual": "§5.3 驱动系统维护",
+    "expected_hours": 4,
+    "spares": [
+      {
+        "name": "驱动皮带",
+        "stock": 4,
+        "lead_days": 3
+      },
+      {
+        "name": "电机碳刷",
+        "stock": 8,
+        "lead_days": 4
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0138",
+        "resolution": "重新配平后恢复正常",
+        "days_ago": 114
+      }
+    ]
+  },
+  {
+    "code": "E-301",
+    "fault_name": "光源能量不足",
+    "device_type": "分光光度计",
+    "manual": "§2.4 光源更换流程",
+    "expected_hours": 3,
+    "spares": [
+      {
+        "name": "氘灯",
+        "stock": 2,
+        "lead_days": 10
+      },
+      {
+        "name": "钨灯",
+        "stock": 3,
+        "lead_days": 8
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0346",
+        "resolution": "重新配平后恢复正常",
+        "days_ago": 144
+      }
+    ]
+  },
+  {
+    "code": "E-302",
+    "fault_name": "基线漂移超限",
+    "device_type": "分光光度计",
+    "manual": "§3.1 基线校正",
+    "expected_hours": 3,
+    "spares": [
+      {
+        "name": "比色皿（石英）",
+        "stock": 10,
+        "lead_days": 2
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0946",
+        "resolution": "更换备件后复测通过",
+        "days_ago": 34
+      }
+    ]
+  },
+  {
+    "code": "E-303",
+    "fault_name": "波长准确度超差",
+    "device_type": "分光光度计",
+    "manual": "§3.5 波长校准",
+    "expected_hours": 1,
+    "spares": [
+      {
+        "name": "单色器传动带",
+        "stock": 1,
+        "lead_days": 15
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0742",
+        "resolution": "更换备件后复测通过",
+        "days_ago": 18
+      },
+      {
+        "id": "T-2026-0690",
+        "resolution": "更换备件后复测通过",
+        "days_ago": 104
+      },
+      {
+        "id": "T-2026-0150",
+        "resolution": "更换后连续运行 72h 无告警",
+        "days_ago": 14
+      }
+    ]
+  },
+  {
+    "code": "E-401",
+    "fault_name": "温度超调",
+    "device_type": "培养箱",
+    "manual": "§4.2 温控整定",
+    "expected_hours": 4,
+    "spares": [
+      {
+        "name": "加热元件",
+        "stock": 2,
+        "lead_days": 6
+      },
+      {
+        "name": "固态继电器",
+        "stock": 5,
+        "lead_days": 3
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0396",
+        "resolution": "调整参数后恢复",
+        "days_ago": 39
+      }
+    ]
+  },
+  {
+    "code": "E-402",
+    "fault_name": "湿度传感器失效",
+    "device_type": "培养箱",
+    "manual": "§5.1 湿度系统维护",
+    "expected_hours": 4,
+    "spares": [
+      {
+        "name": "湿度传感器模块",
+        "stock": 3,
+        "lead_days": 5
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0684",
+        "resolution": "清洁保养后指标达标",
+        "days_ago": 146
+      }
+    ]
+  },
+  {
+    "code": "E-403",
+    "fault_name": "箱门未关严",
+    "device_type": "培养箱",
+    "manual": "§2.2 门封维护",
+    "expected_hours": 1,
+    "spares": [
+      {
+        "name": "门封条",
+        "stock": 8,
+        "lead_days": 2
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0695",
+        "resolution": "更换备件后复测通过",
+        "days_ago": 166
+      }
+    ]
+  },
+  {
+    "code": "E-12",
+    "fault_name": "温度传感器异常",
+    "device_type": "PCR仪",
+    "manual": "§4.2 温度传感器检查",
+    "expected_hours": 1,
+    "spares": [
+      {
+        "name": "温度传感器 PT100",
+        "stock": 3,
+        "lead_days": 5
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0199",
+        "resolution": "更换备件后复测通过",
+        "days_ago": 19
+      },
+      {
+        "id": "T-2026-0677",
+        "resolution": "重新配平后恢复正常",
+        "days_ago": 161
+      }
+    ]
+  },
+  {
+    "code": "E-15",
+    "fault_name": "热盖未关闭",
+    "device_type": "PCR仪",
+    "manual": "§2.3 热盖操作",
+    "expected_hours": 1,
+    "spares": [
+      {
+        "name": "热盖门锁微动开关",
+        "stock": 4,
+        "lead_days": 3
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0796",
+        "resolution": "更换备件后复测通过",
+        "days_ago": 112
+      },
+      {
+        "id": "T-2026-0895",
+        "resolution": "清洁保养后指标达标",
+        "days_ago": 122
+      }
+    ]
+  },
+  {
+    "code": "E-205",
+    "fault_name": "轴承磨损",
+    "device_type": "离心机",
+    "manual": "§5.2 主轴轴承检查",
+    "expected_hours": 4,
+    "spares": [
+      {
+        "name": "主轴轴承组",
+        "stock": 1,
+        "lead_days": 20
+      }
+    ],
+    "tickets": [
+      {
+        "id": "T-2026-0470",
+        "resolution": "清洁保养后指标达标",
+        "days_ago": 66
+      },
+      {
+        "id": "T-2026-0913",
+        "resolution": "更换后连续运行 72h 无告警",
+        "days_ago": 65
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+
+!.vscode/settings.json
+# Python 缓存
+# 日志
+# 本地配置与凭据
+# 编辑器
+# 虚拟环境
+# 运行产物
+# 🔴 acps-cli 的登录凭据与证书材料
+# 🔴 私钥与证书 —— 绝对不能进仓库
+*.crt
+*.csr
+*.db
+*.key
+*.log
+*.pem
+*.py[cod]
+*.pyc
+*.sqlite3
+.acps-cli/
+.acps-cli/
+.env
+.env.local
+.idea/
+.mypy_cache/
+.pytest_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.venv/
+.vscode/*
+__pycache__/
+__pycache__/
+eab.json
+keyfiles/
+keyfiles/
+private/
+token.json
